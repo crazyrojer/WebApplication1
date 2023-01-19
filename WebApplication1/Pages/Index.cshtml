@@ -2,30 +2,54 @@
 @using WebApplication1;
 @model IndexModel
 @{
-    ViewData["Title"] = "Some page";
+    ViewData["Title"] = "Сомнительная страницв";
 }
 
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Our team</p>
+    <h1>Заходи не бойся, уходи не плачь</h1>
+    <h1>Дримтим</h1>
    
     <table class="table">
-        @foreach (var item in Model.users)
+        @foreach (var item in Program.userhub.users)
         {
             <tr>
                 <td>@item.Id </td>
                 <td>@item.Name </td>
             </tr>
-        }
+        }   
     </table>
 
+    <h2>Добавка</h2>
+    <p>Введите имя пользователя и его ID</p>
     <form method ="post">
         <label for ="name">Имя</label><br />
         <input type="text" name="name" id="name" /><br /><br />
-        <label for="id">ID</label><br />
+        <label for="id">АйИди</label><br />
         <input type="number" name="id" id="id" /><br /><br />
-        <input type="submit" value="Send" />
+        <input type="submit" value="Прищучить" asp-page-handler="Add" />
+    </form>
+
+
+
+    <h2>Убавка</h2>
+    <p>Введите ID пользователя</p>
+    <form method="post">
+        <label for="id">АйИди</label><br />
+        <input type="number" name="id" id="id" /><br /><br />
+        <input type="submit" value="Испепелить" asp-page-handler="Delete" />
+    </form>
+
+
+
+    <h2>Замена</h2>
+    <p>Введите ID пользователя и его новое имя</p>
+    <form method="post">
+        <label for="id">АйИди</label><br />
+        <input type="number" name="id" id="id" /><br /><br />
+        <label for="name">Имя</label><br />
+        <input type="text" name="name" id="name" /><br /><br />
+        <input type="submit" value="Махнуть" asp-page-handler="Change" />
     </form>
 
     
