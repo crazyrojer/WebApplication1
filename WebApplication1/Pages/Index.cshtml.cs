@@ -8,10 +8,12 @@ namespace WebApplication1.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        public UserHub UserHub { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, UserHub userHub)
         {
             _logger = logger;
+            UserHub = userHub;
         }
 
         public void OnGet()
@@ -22,7 +24,7 @@ namespace WebApplication1.Pages
         {
             bool checkId = true;
 
-            foreach (var item in Program.userhub.users)
+            foreach (var item in UserHub.users)
             {
                 if (item.Id == id)
                 {
@@ -32,7 +34,7 @@ namespace WebApplication1.Pages
 
             if (checkId)
             {
-                Program.userhub.AddUser(name, id);
+                UserHub.AddUser(name, id);
             }
          
             return RedirectToPage("index");
@@ -40,13 +42,13 @@ namespace WebApplication1.Pages
 
         public IActionResult OnPostDelete(int id)
         {
-            Program.userhub.RemoveUser(id);
+            UserHub.RemoveUser(id);
             return RedirectToPage("index");
         }
 
         public IActionResult OnPostChange(int id, string name)
         {
-            Program.userhub.ChangeUser(id, name);
+            UserHub.ChangeUser(id, name);
             return RedirectToPage("index");
         }
     }

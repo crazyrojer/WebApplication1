@@ -11,7 +11,7 @@
     <h1>Дримтим</h1>
    
     <table class="table">
-        @foreach (var item in Program.userhub.users)
+        @foreach (var item in Model.UserHub.users)
         {
             <tr>
                 <td>@item.Id </td>
@@ -30,8 +30,6 @@
         <input type="submit" value="Прищучить" asp-page-handler="Add" />
     </form>
 
-
-
     <h2>Убавка</h2>
     <p>Введите ID пользователя</p>
     <form method="post">
@@ -39,8 +37,6 @@
         <input type="number" name="id" id="id" /><br /><br />
         <input type="submit" value="Испепелить" asp-page-handler="Delete" />
     </form>
-
-
 
     <h2>Замена</h2>
     <p>Введите ID пользователя и его новое имя</p>
