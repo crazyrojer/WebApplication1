@@ -1,0 +1,32 @@
+﻿@page
+@using WebApplication1;
+@model IndexModel
+@{
+    ViewData["Title"] = "Some page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Our team</p>
+   
+    <table class="table">
+        @foreach (var item in Model.users)
+        {
+            <tr>
+                <td>@item.Id </td>
+                <td>@item.Name </td>
+            </tr>
+        }
+    </table>
+
+    <form method ="post">
+        <label for ="name">Имя</label><br />
+        <input type="text" name="name" id="name" /><br /><br />
+        <label for="id">ID</label><br />
+        <input type="number" name="id" id="id" /><br /><br />
+        <input type="submit" value="Send" />
+    </form>
+
+    
+</div>
