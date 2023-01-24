@@ -8,9 +8,9 @@ namespace WebApplication1.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        public UserHub UserHub { get; set; }
+        public UserHub<User> UserHub { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger, UserHub userHub)
+        public IndexModel(ILogger<IndexModel> logger, UserHub<User> userHub)
         {
             _logger = logger;
             UserHub = userHub;
@@ -22,33 +22,22 @@ namespace WebApplication1.Pages
 
         public IActionResult OnPostAdd(string name, int id)
         {
-            bool checkId = true;
+            UserHub.Entities.Any(u => u.Id == id);
+                UserHub.Add(new User(id, name));
 
-            foreach (var item in UserHub.users)
-            {
-                if (item.Id == id)
-                {
-                    checkId = false;
-                }
-            }
-
-            if (checkId)
-            {
-                UserHub.AddUser(name, id);
-            }
-         
             return RedirectToPage("index");
         }
 
         public IActionResult OnPostDelete(int id)
         {
-            UserHub.RemoveUser(id);
+
+            UserHub.Remove(id);
             return RedirectToPage("index");
         }
 
         public IActionResult OnPostChange(int id, string name)
         {
-            UserHub.ChangeUser(id, name);
+            UserHub.Change(new User(id, name));
             return RedirectToPage("index");
         }
     }

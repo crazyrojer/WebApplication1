@@ -1,47 +1,31 @@
 ﻿namespace WebApplication1
 {
-    public class UserHub
+    public class UserHub<TEntity> where TEntity :class, IEntity
     {
-        public List<User> users { get; private set; }
+        public List<TEntity> Entities { get; private set; }
 
         public UserHub()
         {
-            users = new List<User>()
-            {
-                new User(1, "Vlad"),
-                new User(2, "Andrey"),
-                new User(3, "Vlad"),
-                new User(4, "Nastya"),
-                new User(5, "Nastya"),
-                new User(6, "Sasha"),
-            };
-        }
-        public void AddUser(string name, int id)
-        {
-            users.Add(new User(id, name));
+            Entities = new List<TEntity>();
         }
 
-        public void RemoveUser(int id)
+        public void Add(TEntity entity)
         {
-            foreach (var item in users.ToList())
-            {
-                if (item.Id == id)
-                {
-                    users.Remove(item);
-                }
-            }
+            Entities.Add(entity);
         }
 
-        public void ChangeUser(int id, string name)
+        public void Remove(int id)
         {
-            foreach (var item in users.ToList())
-            {
-                if (item.Id == id)
-                {
-                    item.Name = name;
-                }
-            }
+            var i = Entities.FirstOrDefault(i => i.Id == id);
+
+            if(i != null)
+                Entities.Remove(i);
         }
 
+        public void Change(TEntity entity)
+        {
+            var existed = Entities.FirstOrDefault(i => i.Id == entity.Id);
+            existed = entity;
+        }
     }
 }
