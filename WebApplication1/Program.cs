@@ -12,7 +12,7 @@ namespace WebApplication1
             
             // Add services to the container.
             builder.Services.AddRazorPages();
-            builder.Services.AddSingleton<UserHub>();
+            builder.Services.AddSingleton<UserHub<User>>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
