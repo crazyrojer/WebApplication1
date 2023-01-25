@@ -1,14 +1,18 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace WebApplication1
 {
     public class Program
     {
+        //public static UserHub userhub = new UserHub();
         public static void Main(string[] args)
         {
+            
             var builder = WebApplication.CreateBuilder(args);
-
+            
             // Add services to the container.
             builder.Services.AddRazorPages();
-
+            builder.Services.AddSingleton<UserHub<User>>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

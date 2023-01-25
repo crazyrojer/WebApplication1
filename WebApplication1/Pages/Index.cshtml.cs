@@ -1,34 +1,44 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Reflection;
+using WebApplication1;
 
 namespace WebApplication1.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        public List<User> users = new List<User>();
+        public UserHub<User> UserHub { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, UserHub<User> userHub)
         {
             _logger = logger;
+            UserHub = userHub;
         }
 
         public void OnGet()
         {
-
-            users.Add(new WebApplication1.User(1, "Vlad"));
-            users.Add(new WebApplication1.User(2, "Andrey"));
-            users.Add(new WebApplication1.User(3, "Vlad"));
-            users.Add(new WebApplication1.User(4, "Nastya"));
-            users.Add(new WebApplication1.User(5, "Nastya"));
-            users.Add(new WebApplication1.User(6, "Sasha"));
-
         }
 
-        public void OnPost(string name, int id)
+        public IActionResult OnPostAdd(string name, int id)
         {
-            users.Add(new WebApplication1.User(id, name));
+            UserHub.Entities.Any(u => u.Id == id);
+                UserHub.Add(new User(id, name));
+
+            return RedirectToPage("index");
+        }
+
+        public IActionResult OnPostDelete(int id)
+        {
+
+            UserHub.Remove(id);
+            return RedirectToPage("index");
+        }
+
+        public IActionResult OnPostChange(int id, string name)
+        {
+            UserHub.Change(new User(id, name));
+            return RedirectToPage("index");
         }
     }
 }
