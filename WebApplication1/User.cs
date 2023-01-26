@@ -12,19 +12,5 @@
             Name= name;
             Kaka= kaka;
         }
-
-        public User(int id, string name)
-        {
-            Id = id;
-            Name = name;
-            Kaka = 0;
-        }
-
-        public User(int id)
-        {
-            Id = id;
-            Name = "Adolf";
-            Kaka = 0;
-        }
     }
 }

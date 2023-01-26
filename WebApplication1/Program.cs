@@ -4,7 +4,6 @@ namespace WebApplication1
 {
     public class Program
     {
-        //public static UserHub userhub = new UserHub();
         public static void Main(string[] args)
         {
             
@@ -12,7 +11,6 @@ namespace WebApplication1
             
             // Add services to the container.
             builder.Services.AddRazorPages();
-            builder.Services.AddSingleton<UserHub<User>>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
