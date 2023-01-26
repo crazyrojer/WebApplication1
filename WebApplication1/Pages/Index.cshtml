@@ -11,11 +11,12 @@
     <h1>Дримтим</h1>
    
     <table class="table">
-        @foreach (var item in Model.UserHub.Entities)
+        @foreach (var item in DBWork.GetUsers())
         {
             <tr>
                 <td>@item.Id </td>
                 <td>@item.Name </td>
+                <td>@item.Kaka </td>
             </tr>
         }   
     </table>
@@ -46,5 +47,14 @@
         <label for="name">Имя</label><br />
         <input type="text" name="name" id="name" /><br /><br />
         <input type="submit" value="Махнуть" asp-page-handler="Change" />
+    </form>
+
+    <h2>Метание каках</h2>
+    <p>Введите ID пользователя</p>
+    <form method="post">
+        <label for="id">АйИди</label><br />
+        <input type="number" name="id" id="id" /><br /><br />
+        <input type="submit" value="Метнуть какаху" asp-page-handler="AddKaka" />
+        <input type="submit" value="Забрать какаху" asp-page-handler="RemoveKaka" />
     </form>
 </div>
