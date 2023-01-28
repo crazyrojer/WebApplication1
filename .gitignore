@@ -153,6 +153,7 @@ publish/
 *.publishproj
 
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
+# Microsoft Azure Web App publish settings. Comment the next line if you want to
 # checkin your Azure Web App publish settings, but sensitive information contained
 # in these scripts will be unencrypted
 PublishScripts/
@@ -266,3 +267,28 @@ paket-files/
 __pycache__/
 *.pyc
 /WebApplication1/obj/Debug/net6.0/WebApplication1.assets.cache
+/WebApplication1/bin/Debug/net6.0/WebApplication1.deps.json
+/WebApplication1/bin/Debug/net6.0/WebApplication1.dll
+/WebApplication1/.vscode/launch.json
+/WebApplication1/.vscode/tasks.json
+/WebApplication1/bin/Debug/net6.0/WebApplication1.deps.json
+/WebApplication1/bin/Debug/net6.0/WebApplication1.exe
+/WebApplication1/bin/Debug/net6.0/WebApplication1.staticwebassets.runtime.json
+/WebApplication1/obj/Debug/net6.0/apphost.exe
+/WebApplication1/obj/Debug/net6.0/ref/WebApplication1.dll
+/WebApplication1/obj/Debug/net6.0/refint/WebApplication1.dll
+/WebApplication1/obj/Debug/net6.0/staticwebassets.build.json
+/WebApplication1/obj/Debug/net6.0/staticwebassets.development.json
+/WebApplication1/obj/Debug/net6.0/staticwebassets.pack.json
+/WebApplication1/obj/Debug/net6.0/WebApplication1.csproj.AssemblyReference.cache
+/WebApplication1/obj/Debug/net6.0/WebApplication1.csproj.CoreCompileInputs.cache
+/WebApplication1/obj/Debug/net6.0/WebApplication1.csproj.FileListAbsolute.txt
+/WebApplication1/obj/Debug/net6.0/WebApplication1.dll
+/WebApplication1/obj/Debug/net6.0/WebApplication1.GeneratedMSBuildEditorConfig.editorconfig
+/WebApplication1/obj/Debug/net6.0/WebApplication1.genruntimeconfig.cache
+/WebApplication1/obj/Debug/net6.0/WebApplication1.pdb
+/WebApplication1/obj/Debug/net6.0/WebApplication1.RazorAssemblyInfo.cs
+/WebApplication1/obj/project.assets.json
+/WebApplication1/obj/project.nuget.cache
+/WebApplication1/obj/WebApplication1.csproj.nuget.dgspec.json
+/WebApplication1/obj/WebApplication1.csproj.nuget.g.props
