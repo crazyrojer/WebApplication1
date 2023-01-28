@@ -1,4 +1,4 @@
-﻿namespace WebApplication1
+﻿namespace DbWork
 {
     public class User: IEntity
     {

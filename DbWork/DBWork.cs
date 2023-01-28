@@ -1,7 +1,7 @@
 ﻿using Npgsql;
 using System.Data.Common;
 
-namespace WebApplication1
+namespace DbWork
 {
     public static class DBWork
     {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Reflection;
+using DbWork;
 using WebApplication1;
 
 namespace WebApplication1.Pages
@@ -8,10 +9,12 @@ namespace WebApplication1.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        public string Lalala { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+            Lalala = "Do your HomeWork!!";
         }
 
         public void OnGet()
