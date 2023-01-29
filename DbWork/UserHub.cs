@@ -1,4 +1,4 @@
-﻿namespace WebApplication1
+﻿namespace DbWork
 {
     public class UserHub<TEntity> where TEntity :class, IEntity
     {

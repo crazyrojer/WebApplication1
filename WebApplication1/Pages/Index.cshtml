@@ -1,5 +1,7 @@
 ﻿@page
 @using WebApplication1;
+@using DbWork
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model IndexModel
 @{
     ViewData["Title"] = "Сомнительная страницв";
@@ -9,6 +11,7 @@
 <div class="text-center">
     <h1>Заходи не бойся, уходи не плачь</h1>
     <h1>Дримтим</h1>
+    <h1>@Model.Lalala</h1>
    
     <table class="table">
         @foreach (var item in DBWork.GetUsers())
@@ -33,7 +36,7 @@
                     </form>
                 </td>
             </tr>
-        }   
+        }
     </table>
 
     <h2>Добавка</h2>
