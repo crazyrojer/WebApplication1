@@ -14,9 +14,24 @@
         @foreach (var item in DBWork.GetUsers())
         {
             <tr>
-                <td>@item.Id </td>
+                <td>
+                    @item.Id
+                    <form asp-page-handler="Delete" asp-route-id="@item.Id" method="post">
+                        <button class="btn btn-default">delete</button>
+                    </form>
+                </td>
+
                 <td>@item.Name </td>
-                <td>@item.Kaka </td>
+
+                <td>
+                    <form asp-page-handler="AddKaka" asp-route-id="@item.Id" method="post">
+                        <button class="btn btn-default">+</button>
+                    </form>
+                    @item.Kaka
+                    <form asp-page-handler="RemoveKaka" asp-route-id="@item.Id" method="post">
+                        <button class="btn btn-default">-</button>
+                    </form>
+                </td>
             </tr>
         }   
     </table>
@@ -31,7 +46,7 @@
         <input type="submit" value="Прищучить" asp-page-handler="Add" />
     </form>
 
-    <h2>Убавка</h2>
+   @* <h2>Убавка</h2>
     <p>Введите ID пользователя</p>
     <form method="post">
         <label for="id">АйИди</label><br />
@@ -54,7 +69,7 @@
     <form method="post">
         <label for="id">АйИди</label><br />
         <input type="number" name="id" id="id" /><br /><br />
-        <input type="submit" value="Метнуть какаху" asp-page-handler="AddKaka" />
-        <input type="submit" value="Забрать какаху" asp-page-handler="RemoveKaka" />
+        <input type="submit" value="+" style="height:20px; width:20px; padding:0; border:0" asp-page-handler="AddKaka" />
+        <input type="submit" value="-" style="height:20px; width:20px; padding:0; border:0" asp-page-handler="RemoveKaka" />
     </form>
-</div>
+</div>*@

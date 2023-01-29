@@ -42,7 +42,7 @@ namespace WebApplication1
         {
             List<User> users = new List<User>();
             npgSqlConnection.Open();
-            NpgsqlCommand npgSqlCommand = new NpgsqlCommand("SELECT * FROM users", npgSqlConnection);
+            NpgsqlCommand npgSqlCommand = new NpgsqlCommand("SELECT * FROM users ORDER BY user_id", npgSqlConnection);
             NpgsqlDataReader npgSqlDataReader = npgSqlCommand.ExecuteReader();
             foreach (DbDataRecord dbDataRecord in npgSqlDataReader)
             {
