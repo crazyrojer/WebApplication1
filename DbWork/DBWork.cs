@@ -5,7 +5,7 @@ namespace DbWork
 {
     public static class DBWork
     {
-        private static NpgsqlConnection npgSqlConnection = new NpgsqlConnection("Server=localhost;Port=5432;Username=postgres;Password=postgres;Database=homework;");
+        private static NpgsqlConnection npgSqlConnection = new NpgsqlConnection("Server=localhost;Port=5432;Username=postgres;Password=1473200;Database=homework;");
         
         public static void AddUser(User user)
         {

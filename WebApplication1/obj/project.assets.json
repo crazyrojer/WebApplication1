@@ -288,6 +288,19 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "DbWork/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.1"
+        },
+        "compile": {
+          "bin/placeholder/DbWork.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DbWork.dll": {}
+        }
       }
     }
   },
@@ -709,11 +722,16 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "DbWork/1.0.0": {
+      "type": "project",
+      "path": "../DbWork/DbWork.csproj",
+      "msbuildProject": "../DbWork/DbWork.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.1"
+      "DbWork >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -742,7 +760,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\user\\source\\repos\\WebApplication1\\DbWork\\DbWork.csproj": {
+              "projectPath": "C:\\Users\\user\\source\\repos\\WebApplication1\\DbWork\\DbWork.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -754,12 +776,6 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
-        "dependencies": {
-          "Npgsql.EntityFrameworkCore.PostgreSQL": {
-            "target": "Package",
-            "version": "[7.0.1, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
