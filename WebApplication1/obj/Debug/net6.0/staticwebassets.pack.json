@@ -13,6 +13,42 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\LessonsCoreLogo.png",
+      "PackagePath": "staticwebassets\\images\\LessonsCoreLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\NotFound.png",
+      "PackagePath": "staticwebassets\\images\\NotFound.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\avatar.png",
+      "PackagePath": "staticwebassets\\images\\avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\avatar2.png",
+      "PackagePath": "staticwebassets\\images\\avatar2.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\avatar3.png",
+      "PackagePath": "staticwebassets\\images\\avatar3.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\avatar4.png",
+      "PackagePath": "staticwebassets\\images\\avatar4.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\avatar5.png",
+      "PackagePath": "staticwebassets\\images\\avatar5.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\banner.jpg",
+      "PackagePath": "staticwebassets\\images\\banner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\noimage.png",
+      "PackagePath": "staticwebassets\\images\\noimage.png"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

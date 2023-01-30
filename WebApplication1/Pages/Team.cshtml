@@ -1,0 +1,60 @@
+﻿@page
+@using DbWork
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model TeamModel
+@{
+}
+
+<h1 class="text-center">Employees</h1>
+
+<div class="row">
+    @foreach (var item in DBWork.GetUsers())
+    {
+        var photoPath = $"/images/{item.PhotoPath ?? "noimage.png"}";
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card-deck">
+                <div class="card m-3">
+                    <div class="card-header text-center">
+                        <h3>@item.Name</h3>
+                    </div>
+                
+                    <div class="text-center">
+                        <img class="card-img-top" src="@photoPath" asp-append-version="true"/>
+                    </div>
+                
+                    <div class="card-footer text-center">
+                        <div class="row">
+                            <div class="col">
+                                <form asp-page-handler="RemoveKaka" asp-route-id="@item.Id" method="post">
+                                    <button class="btn btn-success m-1">-</button>
+                                </form> 
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary m-1">@item.Kaka</button>
+                            </div>
+                            <div class="col">
+                                <form asp-page-handler="AddKaka" asp-route-id="@item.Id" method="post">
+                                    <button class="btn btn-danger m-1">+</button>
+                                </form>
+                            </div>
+                        </div>
+                        <form asp-page-handler="Delete" asp-route-id="@item.Id" method="post">
+                            <button class="btn btn-primary">delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+<h2>Добавка</h2>
+<p>Введите имя пользователя и его ID</p>
+<form method ="post">
+    <label for ="name">Имя</label><br />
+    <input type="text" name="name" id="name" /><br /><br />
+    <label for="id">АйИди</label><br />
+    <input type="number" name="id" id="id" /><br /><br />
+    <input type="submit" value="Прищучить" asp-page-handler="Add" />
+</form>
